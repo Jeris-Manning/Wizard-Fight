@@ -46,18 +46,6 @@ class Combatant {
   }
 }
 
-function attackSize() {
-  let attackRoll = Math.floor(Math.random() * 100) + 1;
-  let size = undefined;
-  if (attackRoll < 61) {
-    this.currentAttack = this.smallAttack;
-  } else if (attackRoll < 91) {
-    this.currentAttack = this.mediumAttack;
-  } else {
-    this.currentAttack = this.bigAttack;
-  }
-}
-
 class Wizard extends Combatant {
   constructor(wizardProps) {
     super(wizardProps);
