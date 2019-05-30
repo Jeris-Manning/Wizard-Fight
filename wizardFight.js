@@ -22,8 +22,6 @@ class Combatant {
   }
 
   attack() {
-    
-
     let attackRoll = Math.floor(Math.random() * 100) + 1;
     let damageRoll = Math.floor(Math.random() * 100) + 1;
     let damage = 0;
@@ -111,22 +109,18 @@ console.log("");
 warriorB.announce();
 console.log("");
 while (warriorA.startingHealth > 0 && warriorB.startingHealth > 0) {
-  
-
-warriorA.startingHealth -= warriorB.attack();
-console.log(`${warriorA.name} has ${warriorA.startingHealth} hp left!`);
-console.log("");
-warriorB.startingHealth -= warriorA.attack();
-console.log(`${warriorB.name} has ${warriorB.startingHealth} hp left!`);
-console.log("");
-
-};
+  warriorA.startingHealth -= warriorB.attack();
+  console.log(`${warriorA.name} has ${warriorA.startingHealth} hp left!`);
+  console.log("");
+  warriorB.startingHealth -= warriorA.attack();
+  console.log(`${warriorB.name} has ${warriorB.startingHealth} hp left!`);
+  console.log("");
+}
 
 if (warriorA.startingHealth < 1 && warriorB.startingHealth < 1) {
-  console.log("Both warriors have perished in combat!"); 
-} else if (warriorA.startingHealth > 1){
+  console.log("Both warriors have perished in combat!");
+} else if (warriorA.startingHealth > 1) {
   console.log(`${warriorA.name} is victorious!`);
-  
 } else {
   console.log(`${warriorB.name} is Victorious!`);
 }
